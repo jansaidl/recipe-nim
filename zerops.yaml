@@ -5,11 +5,13 @@ zerops:
       buildCommands:
         - sudo apt update && sudo apt install -y gcc
         - curl https://nim-lang.org/choosenim/init.sh -sSf | sh -s -- -y
-        - nim c -r server.nim
+        - cp  /home/zerops/.nimble/bin/* /home/zerops/.local/bin/
+        - nim c server.nim
       deployFiles:
         - server
     run:
       start: ./server
+      base: ubuntu@24.04
       ports:
         - port: 8080
           httpSupport: true
