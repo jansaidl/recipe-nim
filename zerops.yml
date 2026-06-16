@@ -1,0 +1,15 @@
+zerops:
+  - setup: app
+    build:
+      base: ubuntu@24.04
+      buildCommands:
+        - sudo apt update && sudo apt install -y gcc
+        - curl https://nim-lang.org/choosenim/init.sh -sSf | sh -s -- -y
+        - nim c -r server.nim
+      deployFiles:
+        - server
+    run:
+      start: ./server
+      ports:
+        - port: 8080
+          httpSupport: true
