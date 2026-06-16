@@ -1,0 +1,11 @@
+project:
+  name: nim-hello-world-production
+
+services:
+  - hostname: app
+    type: ubuntu@24.04
+    zeropsSetup: app
+    buildFromGit: https://github.com/jansaidl/recipe-nim
+    enableSubdomainAccess: true
+    minContainers: 1
+    maxContainers: 2
