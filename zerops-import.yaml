@@ -5,4 +5,4 @@ services:
   - hostname: app
     type: ubuntu@24.04
     enableSubdomainAccess: true
-    buildFromGit: https://github.com/jansadl/recipe-nim
+    buildFromGit: https://github.com/jansaidl/recipe-nim
